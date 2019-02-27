@@ -3,13 +3,30 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: [ './users.component.css' ]
 })
 export class UsersComponent implements OnInit {
+  users: any[];
+  hasPermission = true;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    if (this.hasPermission) {
+      this.getUsers()
+        .then(users => this.users = users)
+        .catch(e => console.error(e.message));
+    } else {
+      this.users = [];
+    }
+  }
+
+  async getUsers() {
+    return [
+      { name: 'john', email: 'test@test.com' },
+      { name: 'any', email: 'any@test.com' }
+    ];
   }
 
 }
