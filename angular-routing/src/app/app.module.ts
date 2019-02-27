@@ -17,15 +17,20 @@ import {
   MatListModule,
   MatGridListModule,
   MatCardModule,
-  MatMenuModule
+  MatMenuModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule
 } from '@angular/material';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     CustomerComponent,
-    NavComponent
+    NavComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,10 @@ import {
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
